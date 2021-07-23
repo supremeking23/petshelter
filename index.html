@@ -42,33 +42,209 @@
 	</head>
 	<body>
 		<nav>
-			<a class="navbar-brand" href="#">PETSHELTER</a>
-			<div class="nav-links">
-				<a href="#" class="active">Home</a>
-				<a href="#">Services</a>
-				<a href="#">Event</a>
-				<button type="button" class="btn btn-add-pet" data-toggle="modal" data-target="#addPet">
-					<i class="fa fa-plus-circle" aria-hidden="true"></i>Launch demo modal
-				</button>
-				<!-- Modal -->
-				<div class="modal fade" id="addPet" tabindex="-1" aria-labelledby="addPet" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="addPet">Modal title</h5>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="modal-body">...</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-primary">Save changes</button>
+			<div class="container">
+				<a class="navbar-brand" href="#">PETSHELTER</a>
+				<div class="nav-links">
+					<a href="#" class="active">Home</a>
+					<a href="#">Services</a>
+					<a href="#">Event</a>
+					<button type="button" class="btn btn-add-pet" data-toggle="modal" data-target="#addPet">
+						<i class="fa fa-plus-circle" aria-hidden="true"></i>Add pet to shelter
+					</button>
+					<!-- Modal -->
+					<div class="modal fade" id="addPet" tabindex="-1" aria-labelledby="addPet" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="addPet">Add Pet</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<form>
+									<div class="modal-body">
+										<div class="form-group">
+											<div class="col-md-3">
+												<label for="pet-name">Pet Name</label>
+											</div>
+											<div class="col-md-9">
+												<input type="text" class="form-control" id="pet-name" name="pet-name" aria-describedby="emailHelp" />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<div class="col-md-3">
+												<label for="pet-name">Pet Type</label>
+											</div>
+											<div class="col-md-9">
+												<select class="form-control" id="pet-type" name="pet-type">
+													<option>Pig</option>
+													<option>Dog</option>
+													<option>Cat</option>
+													<option>Horse</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-add" data-dismiss="modal">
+											<i class="fas fa-save"></i>
+											Add Pet
+										</button>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</nav>
+
+		<!-- banner -->
+		<div class="banner">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 banner-text">
+						<h1>Let's <span class="adopt"> Adopt </span>Don't <span class="shop">Shop</span></h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque id lorem nisi.</p>
+					</div>
+					<div class="col-md-8 banner-image">
+						<img src="./assets/Group 4.png" class="combine" alt="combine" />
+						<img src="./assets/Vector 3.png" class="light-red" alt="light-red" />
+						<img src="./assets/Vector 4.png" class="orange" alt="orange" />
+						<img src="./assets/image 5.png" class="cat" alt="cat" />
+						<img src="./assets/image 3.png" class="dog" alt="dog" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="pet-list">
+			<div class="container">
+				<div class="row">
+					<div class="col md-12">
+						<h2>These pets are looking for a good home</h2>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="pet-info">
+							<p>Garfield</p>
+							<p>Cats</p>
+							<div class="action">
+								<a href="" data-toggle="modal" data-target="#detailsPet"><i class="far fa-list-alt"></i> Details</a>
+								<a role="button" data-toggle="modal" data-target="#editPet"><i class="fas fa-pen-square"></i> Edit</a>
+
+								<div class="modal fade detailsPet" id="detailsPet" tabindex="-1" aria-labelledby="detailsPet" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="detailsPet">Details About: Garfield</h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<form>
+												<div class="modal-body">
+													<div class="form-group">
+														<div class="col-md-3">
+															<label for="pet-name">Pet Type</label>
+														</div>
+														<label for="pet-name">Cat</label>
+													</div>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-like-pet" data-dismiss="modal">
+														<i class="fas fa-heart"></i>
+														Like Garfield
+													</button>
+													<button type="button" class="btn btn-adopt-pet" data-dismiss="modal">
+														<i class="fa fa-home" aria-hidden="true"></i>
+														Adopt Garfield
+													</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+
+								<div class="modal fade" id="editPet" tabindex="-1" aria-labelledby="editPet" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="addPet">Edit Details: Garfield</h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<form>
+												<div class="modal-body">
+													<div class="form-group">
+														<div class="col-md-3">
+															<label for="pet-name">Pet Type</label>
+														</div>
+														<div class="col-md-9">
+															<select class="form-control" id="pet-type" name="pet-type">
+																<option>Pig</option>
+																<option>Dog</option>
+																<option>Cat</option>
+																<option>Horse</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-update" data-dismiss="modal">
+														<i class="fas fa-save"></i>
+														Save Changes
+													</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pet-info">
+							<p>Doraemon</p>
+							<p>Cats</p>
+							<div class="action">
+								<a href=""><i class="far fa-list-alt"></i> Details</a>
+								<a href=""><i class="fas fa-pen-square"></i> Edit</a>
+							</div>
+						</div>
+						<div class="pet-info">
+							<p>Snoopy</p>
+							<p>Dog</p>
+							<div class="action">
+								<a href=""><i class="far fa-list-alt"></i> Details</a>
+								<a href=""><i class="fas fa-pen-square"></i> Edit</a>
+							</div>
+						</div>
+						<div class="pet-info">
+							<p>Daffy</p>
+							<p>Duck</p>
+							<div class="action">
+								<a href=""><i class="far fa-list-alt"></i> Details</a>
+								<a href=""><i class="fas fa-pen-square"></i> Edit</a>
+							</div>
+						</div>
+						<div class="pet-info">
+							<p>Pen Pen</p>
+							<p>Penguin</p>
+							<div class="action">
+								<a href=""><i class="far fa-list-alt"></i> Details</a>
+								<a href=""><i class="fas fa-pen-square"></i> Edit</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<p>@2020 <a href="#">V88Studios</a>. All Rights Reserved</p>
+		</footer>
 	</body>
 </html>
