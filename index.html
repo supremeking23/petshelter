@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>PETSHELTER</title>
 
 		<!-- Bootstrap CSS -->
 		<link
@@ -48,7 +48,7 @@
 					<a href="#" class="active">Home</a>
 					<a href="#">Services</a>
 					<a href="#">Event</a>
-					<button type="button" class="btn btn-add-pet" data-toggle="modal" data-target="#addPet">
+					<button type="button" class="btn btn-add-pet-to-shelter" data-toggle="modal" data-target="#addPet">
 						<i class="fa fa-plus-circle" aria-hidden="true"></i>Add pet to shelter
 					</button>
 					<!-- Modal -->
@@ -77,7 +77,7 @@
 												<label for="pet-name">Pet Type</label>
 											</div>
 											<div class="col-md-9">
-												<select class="form-control" id="pet-type" name="pet-type">
+												<select class="form-control custom-select" id="pet-type" name="pet-type">
 													<option>Pig</option>
 													<option>Dog</option>
 													<option>Cat</option>
@@ -149,20 +149,26 @@
 												<div class="modal-body">
 													<div class="form-group">
 														<div class="col-md-3">
-															<label for="pet-name">Pet Type</label>
+															<label for="pet-type">Pet Type</label>
 														</div>
-														<label for="pet-name">Cat</label>
+														<div class="col-md-9">
+															<p id="pet-type" class="pet-type">Cat</p>
+														</div>
 													</div>
 												</div>
 												<div class="modal-footer">
-													<button type="button" class="btn btn-like-pet" data-dismiss="modal">
-														<i class="fas fa-heart"></i>
-														Like Garfield
-													</button>
-													<button type="button" class="btn btn-adopt-pet" data-dismiss="modal">
-														<i class="fa fa-home" aria-hidden="true"></i>
-														Adopt Garfield
-													</button>
+													<p><span class="likes">0</span> Likes</p>
+
+													<div class="button-group">
+														<button type="button" class="btn btn-like-pet" data-dismiss="modal">
+															<i class="fas fa-heart"></i>
+															Like Garfield
+														</button>
+														<button type="button" class="btn btn-adopt-pet" data-dismiss="modal">
+															<i class="fa fa-home" aria-hidden="true"></i>
+															Adopt Garfield
+														</button>
+													</div>
 												</div>
 											</form>
 										</div>
@@ -185,7 +191,7 @@
 															<label for="pet-name">Pet Type</label>
 														</div>
 														<div class="col-md-9">
-															<select class="form-control" id="pet-type" name="pet-type">
+															<select class="form-control custom-select" id="pet-type" name="pet-type">
 																<option>Pig</option>
 																<option>Dog</option>
 																<option>Cat</option>
