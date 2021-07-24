@@ -2,6 +2,7 @@
 @nav-background: #ffffff;
 @text-lightgary: #bdbdbd;
 @button-primary-color: #ff5c4c;
+@pink-color: #ff5c4c;
 @link-active-color: #ff5c4c;
 @text-pink-color: #ff5c4c;
 body * {
@@ -9,6 +10,18 @@ body * {
 }
 body {
 	background: @body-background;
+}
+
+.toast {
+	.toast-header {
+		background: @pink-color;
+		color: #fff;
+	}
+
+	.added-pet-name {
+		font-weight: bold;
+	}
+	// background: @pink-color;
 }
 
 .modal {
