@@ -25,12 +25,8 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Kanit&display=swap" rel="stylesheet" />
-		<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-		<script
-			src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-			crossorigin="anonymous"
-		></script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
@@ -40,7 +36,8 @@
 		<link rel="stylesheet/less" type="text/css" href="less/styles.less" />
 		<script src="//cdn.jsdelivr.net/npm/less@4.1.1"></script>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="./js/scripts.js"></script>
+
 		<script>
 			$(document).ready(function () {});
 		</script>
@@ -66,7 +63,7 @@
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
-								<form>
+								<form action="#" method="POST">
 									<div class="modal-body">
 										<div class="form-group">
 											<div class="col-md-3">
@@ -133,7 +130,7 @@
 				</div>
 
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-md-12 pet-lists">
 						<div class="pet-info">
 							<p>Garfield</p>
 							<p>Cats</p>
@@ -252,6 +249,18 @@
 					</div>
 				</div>
 			</div>
+		</div>
+
+		<!-- toast -->
+		<div class="toast" role="alert" data-delay="3000" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 100px; right: 0">
+			<div class="toast-header">
+				<strong class="mr-auto">Succes</strong>
+				<small>1 second ago</small>
+				<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="toast-body"><span class="added-pet-name"></span>, has been added to pet list.</div>
 		</div>
 
 		<footer>
