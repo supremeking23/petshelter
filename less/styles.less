@@ -2,6 +2,8 @@
 @nav-background: #ffffff;
 @text-lightgary: #bdbdbd;
 @button-primary-color: #ff5c4c;
+@link-active-color: #ff5c4c;
+@text-pink-color: #ff5c4c;
 body * {
 	// outline: 1px dashed red;
 }
@@ -32,32 +34,45 @@ body {
 						// width: 300px;
 						background: #f2f2f2;
 						border: none;
+						color: #333333;
 					}
 
 					select {
 						/* styling */
-						// background-color: white;
+						background-color: white;
 						// border: thin solid blue;
-						// border-radius: 4px;
-						// display: inline-block;
-						// font: inherit;
-						// line-height: 1.5em;
-						// padding: 0.5em 3.5em 0.5em 1em;
+						border-radius: 4px;
+						display: inline-block;
+						font: inherit;
+						line-height: 1.5em;
+						padding: 0.5em 3.5em 0.5em 1em;
+						color: #333333;
+						font-size: 14px;
 
-						// /* reset */
+						/* reset */
 
-						// margin: 0;
-						// -webkit-box-sizing: border-box;
-						// -moz-box-sizing: border-box;
-						// box-sizing: border-box;
-						// -webkit-appearance: none;
-						// -moz-appearance: none;
+						margin: 0;
+						-webkit-box-sizing: border-box;
+						-moz-box-sizing: border-box;
+						box-sizing: border-box;
+						-webkit-appearance: none;
+						-moz-appearance: none;
+					}
 
-						// background-image: linear-gradient(45deg, transparent 50%, gray 50%),
-						// 	linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
-						// background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-						// background-size: 5px 5px, 5px 5px, 1px 1.5em;
-						// background-repeat: no-repeat;
+					// select.round {
+					// 	background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%),
+					// 		radial-gradient(#ddd 70%, transparent 72%);
+					// 	background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 0.5em) 0.5em;
+					// 	background-size: 5px 5px, 5px 5px, 1.5em 1.5em;
+					// 	background-repeat: no-repeat;
+					// }
+
+					select.custom-select {
+						background-image: linear-gradient(45deg, transparent 50%, #c4c4c4 50%), linear-gradient(135deg, #c4c4c4 50%, transparent 50%);
+
+						background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 0.5em) 0.5em;
+						background-size: 5px 5px, 5px 5px, 1.5em 1.5em;
+						background-repeat: no-repeat;
 					}
 				}
 			}
@@ -70,7 +85,8 @@ body {
 
 .btn-add,
 .btn-update,
-.btn-adopt-pet {
+.btn-adopt-pet,
+.btn-like-pet {
 	background: @button-primary-color;
 	color: #fff;
 	font-size: 14px;
@@ -89,23 +105,6 @@ body {
 .btn-like-pet {
 	background: #f5c388;
 	color: #fff;
-	font-size: 14px;
-	margin-right: 17px;
-	padding: 5.72 0px 6.68px 0px;
-	&:hover {
-		color: #fff;
-	}
-
-	i {
-		margin-right: 10px;
-		margin-left: 10px;
-	}
-}
-
-.detailsPet {
-	.modal-footer {
-		background: #f2f2f2;
-	}
 }
 
 nav {
@@ -123,7 +122,7 @@ nav {
 		align-items: center;
 		.navbar-brand {
 			font-size: 24px;
-			color: #000;
+			color: #141414;
 			font-family: "Do Hyeon", sans-serif;
 			margin: 23px 288px 24px 24px;
 		}
@@ -136,12 +135,12 @@ nav {
 
 				margin: 23px 48px 24px 0px;
 				&.active {
-					color: #ff5c4c;
+					color: @link-active-color;
 				}
 			}
 		}
 
-		.btn-add-pet {
+		.btn-add-pet-to-shelter {
 			background: @button-primary-color;
 			color: #fff;
 			padding: 6px 7px 9px 0px;
@@ -172,15 +171,15 @@ nav {
 			width: 264px;
 			color: #141414;
 			.adopt {
-				color: #ff5c4c;
+				color: @text-pink-color;
 			}
 			.shop {
-				color: #bdbdbd;
+				color: @text-lightgary;
 			}
 		}
 
 		p {
-			color: #bdbdbd;
+			color: @text-lightgary;
 		}
 	}
 
@@ -250,10 +249,14 @@ nav {
 			width: 230px;
 		}
 
+		label {
+			color: @text-lightgary;
+		}
+
 		.action {
 			margin-right: 24.5px;
 			a {
-				color: #bdbdbd;
+				color: @text-lightgary;
 				font-size: 18px;
 				.fas,
 				.far {
@@ -265,6 +268,30 @@ nav {
 				}
 			}
 		}
+
+		.detailsPet {
+			.pet-type {
+				margin-top: 10px !important;
+				margin-right: 23px;
+			}
+			.modal-footer {
+				background: #f2f2f2;
+				display: flex;
+				flex-direction: row;
+
+				p {
+					margin-top: 0px !important;
+					margin-left: 0px !important;
+					font-family: "Kanit", sans-serif;
+					font-size: 18px;
+					width: 100px !important;
+					height: 22px;
+					text-align: right;
+					margin-right: 23px;
+					color: @text-lightgary;
+				}
+			}
+		}
 	}
 }
 
@@ -272,7 +299,7 @@ footer {
 	margin-top: 50px;
 
 	p {
-		color: #bdbdbd;
+		color: @text-lightgary;
 		text-align: center;
 		font-size: 14px;
 		font-family: "Kanit", sans-serif;
