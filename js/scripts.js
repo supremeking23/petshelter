@@ -11,7 +11,7 @@ $(document).ready(function () {
 		new_pet += `	<p>${$("#pet-type").val()}</p>`;
 		new_pet += `	<div class="action">`;
 		new_pet += `		<a href=""  role="button" class="detailsPet-open-modal" data-toggle="modal" data-target=".detailsPet"><i class="far fa-list-alt"></i> Details</a>`;
-		new_pet += `		<a href=""><i class="fas fa-pen-square"></i> Edit</a>`;
+		new_pet += `		<a ref="#" role="button" data-toggle="modal" class="editPet-open-modal" data-target=".editPet"><i class="fas fa-pen-square"></i> Edit</a>`;
 		new_pet += `	</div>`;
 		new_pet += `</div>`;
 
@@ -30,5 +30,18 @@ $(document).ready(function () {
 		console.log($(this).parent().siblings()[0].innerHTML);
 		$(".detailsPet .modal-dialog .modal-content .modal-header .modal-title .pet-name").html($(this).parent().siblings()[0].innerHTML);
 		$(".detailsPet .modal-dialog .modal-content .modal-body .pet-type").html($(this).parent().siblings()[1].innerHTML);
+	});
+
+	$(document).on("click", ".editPet-open-modal", function (e) {
+		e.preventDefault();
+		// alert("sdsd");
+		// console.log($(this).parent().siblings()[0].innerHTML);
+		$(".editPet .modal-dialog .modal-content .modal-header .modal-title .pet-name").html($(this).parent().siblings()[0].innerHTML);
+		// $(".editPet .modal-dialog .modal-content .modal-body .pet-type").html(`<option>ivan</option>`);
+		$(`.editPet .modal-dialog .modal-content .modal-body .pet-type option:contains("${$(this).parent().siblings()[1].innerHTML}")`).prop(
+			"selected",
+			true
+		);
+		console.log($(this).parent().siblings()[1].innerHTML);
 	});
 });
