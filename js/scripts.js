@@ -64,8 +64,6 @@ $(document).ready(function () {
 
 		load_pets();
 
-		// $(".pet-lists").html(pets);
-
 		$(".added-pet-name").html($("#pet-name").val());
 
 		$("#pet-name").val("");
@@ -108,6 +106,6 @@ $(document).ready(function () {
 
 		load_pets();
 
-		console.log($(".pet-lists").children().data());
+		// console.log($(".pet-lists").children().data());
 	});
 });
