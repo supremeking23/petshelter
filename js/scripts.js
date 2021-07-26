@@ -30,7 +30,8 @@ $(document).ready(function () {
 
 	function load_pets() {
 		let pets = ``;
-		for (let i = all_pets.length - 1; i >= 0; i--) {
+		// for (let i = all_pets.length - 1; i >= 0; i--) {
+		for (let i = 0; i < all_pets.length; i++) {
 			pets += `<div class="pet-info" data-pet="${all_pets[i].pet_name}">`;
 			pets += `	<p>${all_pets[i].pet_name}</p>`;
 			pets += `	<p>${all_pets[i].pet_type}</p>`;
@@ -43,8 +44,6 @@ $(document).ready(function () {
 
 		$(".pet-lists").html(pets);
 	}
-
-	load_pets();
 
 	//////////////////////////////////////////////////////////////////////////
 	// add pet
@@ -60,7 +59,7 @@ $(document).ready(function () {
 			pet_type: $("#pet-type").val(),
 		};
 
-		all_pets.push(new_pet);
+		all_pets.unshift(new_pet);
 
 		load_pets();
 
@@ -78,6 +77,7 @@ $(document).ready(function () {
 		console.log($(this).parent().siblings()[0].innerHTML);
 		$(".detailsPet .modal-dialog .modal-content .modal-header .modal-title .pet-name").html($(this).parent().siblings()[0].innerHTML);
 		$(".detailsPet .modal-dialog .modal-content .modal-body .pet-type").html($(this).parent().siblings()[1].innerHTML);
+		$(".detailsPet .modal-dialog .modal-content .modal-footer .pet-name").html($(this).parent().siblings()[0].innerHTML);
 	});
 
 	$(document).on("click", ".editPet-open-modal", function (e) {
@@ -108,4 +108,7 @@ $(document).ready(function () {
 
 		// console.log($(".pet-lists").children().data());
 	});
+
+	// init
+	load_pets();
 });
