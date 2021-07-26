@@ -44,4 +44,12 @@ $(document).ready(function () {
 		);
 		console.log($(this).parent().siblings()[1].innerHTML);
 	});
+
+	$(document).on("click", ".btn-update", function () {
+		// alert("edit");
+		// console.log($(".editPet .modal-dialog .modal-content .modal-header .modal-title .pet-name").html());
+		let pet_to_edit = $(".editPet .modal-dialog .modal-content .modal-header .modal-title .pet-name").html();
+
+		console.log($(".pet-lists").children().data());
+	});
 });
