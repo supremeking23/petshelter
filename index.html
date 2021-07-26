@@ -121,7 +121,7 @@
 			</div>
 		</div>
 
-		<div class="pet-list">
+		<div class="pets-section">
 			<div class="container">
 				<div class="row">
 					<div class="col md-12">
@@ -131,95 +131,70 @@
 
 				<div class="row">
 					<div class="col-md-12 pet-lists">
-						<div class="pet-info">
+						<div class="pet-info" data-pet="Garfield">
 							<p>Garfield</p>
-							<p>Cats</p>
+							<p>Cat</p>
 							<div class="action">
 								<a href="#" role="button" class="detailsPet-open-modal" data-toggle="modal" data-target=".detailsPet"
 									><i class="far fa-list-alt"></i> Details</a
 								>
-								<a role="button" data-toggle="modal" data-target="#editPet"><i class="fas fa-pen-square"></i> Edit</a>
-
-								<!-- <div class="modal fade" id="editPet" tabindex="-1" aria-labelledby="editPet" aria-hidden="true">
-									<div class="modal-dialog">
-										<div class="modal-content">
-											<div class="modal-header">
-												<h5 class="modal-title" id="addPet">Edit Details: Garfield</h5>
-												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-													<span aria-hidden="true">&times;</span>
-												</button>
-											</div>
-											<form>
-												<div class="modal-body">
-													<div class="form-group">
-														<div class="col-md-3">
-															<label for="pet-name">Pet Type</label>
-														</div>
-														<div class="col-md-9">
-															<select class="form-control custom-select" id="pet-type" name="pet-type">
-																<option>Pig</option>
-																<option>Dog</option>
-																<option>Cat</option>
-																<option>Horse</option>
-															</select>
-														</div>
-													</div>
-												</div>
-												<div class="modal-footer">
-													<button type="button" class="btn btn-update" data-dismiss="modal">
-														<i class="fas fa-save"></i>
-														Save Changes
-													</button>
-												</div>
-											</form>
-										</div>
-									</div>
-								</div> -->
+								<a href="#" role="button" data-toggle="modal" class="editPet-open-modal" data-target=".editPet"
+									><i class="fas fa-pen-square"></i> Edit</a
+								>
 							</div>
 						</div>
-						<div class="pet-info">
+						<!-- <div class="pet-info" data-pet="Doraemon">
 							<p>Doraemon</p>
-							<p>Cats</p>
+							<p>Cat</p>
 							<div class="action">
 								<a href="" role="button" class="detailsPet-open-modal" data-toggle="modal" data-target=".detailsPet"
 									><i class="far fa-list-alt"></i> Details</a
 								>
-								<a href=""><i class="fas fa-pen-square"></i> Edit</a>
+								<a ref="#" role="button" data-toggle="modal" class="editPet-open-modal" data-target=".editPet"
+									><i class="fas fa-pen-square"></i> Edit</a
+								>
 							</div>
 						</div>
-						<div class="pet-info">
+						<div class="pet-info" data-pet="Snoopy">
 							<p>Snoopy</p>
 							<p>Dog</p>
 							<div class="action">
 								<a href="" role="button" class="detailsPet-open-modal" data-toggle="modal" data-target=".detailsPet"
 									><i class="far fa-list-alt"></i> Details</a
 								>
-								<a href=""><i class="fas fa-pen-square"></i> Edit</a>
+								<a ref="#" role="button" data-toggle="modal" class="editPet-open-modal" data-target=".editPet"
+									><i class="fas fa-pen-square"></i> Edit</a
+								>
 							</div>
 						</div>
-						<div class="pet-info">
+						<div class="pet-info" data-pet="Daffy">
 							<p>Daffy</p>
 							<p>Duck</p>
 							<div class="action">
 								<a href="" role="button" class="detailsPet-open-modal" data-toggle="modal" data-target=".detailsPet"
 									><i class="far fa-list-alt"></i> Details</a
 								>
-								<a href=""><i class="fas fa-pen-square"></i> Edit</a>
+								<a ref="#" role="button" data-toggle="modal" class="editPet-open-modal" data-target=".editPet"
+									><i class="fas fa-pen-square"></i> Edit</a
+								>
 							</div>
 						</div>
-						<div class="pet-info">
+						<div class="pet-info" data-pet="Pen Pen">
 							<p>Pen Pen</p>
 							<p>Penguin</p>
 							<div class="action">
 								<a href="" role="button" class="detailsPet-open-modal" data-toggle="modal" data-target=".detailsPet"
 									><i class="far fa-list-alt"></i> Details</a
 								>
-								<a href=""><i class="fas fa-pen-square"></i> Edit</a>
+								<a ref="#" role="button" data-toggle="modal" class="editPet-open-modal" data-target=".editPet"
+									><i class="fas fa-pen-square"></i> Edit</a
+								>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 
+				<!-- modal -->
 				<div class="row">
 					<div class="modal fade detailsPet" id="detailsPet" tabindex="-1" aria-labelledby="detailsPet" aria-hidden="true">
 						<div class="modal-dialog">
@@ -254,6 +229,42 @@
 												Adopt Garfield
 											</button>
 										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<div class="modal fade editPet" id="editPet" tabindex="-1" aria-labelledby="editPet" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="addPet">Edit Details: <span class="pet-name">Garfield</span></h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<form>
+									<div class="modal-body">
+										<div class="form-group">
+											<div class="col-md-3">
+												<label for="pet-name">Pet Type</label>
+											</div>
+											<div class="col-md-9">
+												<select class="form-control custom-select pet-type" id="pet-type-edit" name="pet-type">
+													<option>Pig</option>
+													<option>Dog</option>
+													<option>Cat</option>
+													<option>Horse</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-update" data-dismiss="modal">
+											<i class="fas fa-save"></i>
+											Save Changes
+										</button>
 									</div>
 								</form>
 							</div>
